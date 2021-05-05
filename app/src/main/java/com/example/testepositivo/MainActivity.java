@@ -19,27 +19,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Calcular(View v){
+        // Referenciando os objetos da tela
         EditText in1 = (EditText) findViewById(R.id.txtInput1);
         EditText in2 = (EditText) findViewById(R.id.txtInput2);
         TextView resultado = (TextView) findViewById(R.id.txtResultado);
         TextView txtResultado = (TextView) findViewById(R.id.textResultado);
         txtResultado.setVisibility(View.VISIBLE);
 
-                // Pega o valor do radiobutton selecionado
+        // Obtem o valor do radiobutton selecionado
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.rdGroup);
         int radio = radioGroup.getCheckedRadioButtonId();
 
-        // Pega o valor dos inputs
+        // Obtem o valor dos inputs
         String input1 = in1.getText().toString().trim();
         String input2 = in2.getText().toString().trim();
 
         // Verifica tamanho das inputs. Se for diferente, iguala com 0 a esquerda.
         int tamanhoStringMaior = StringUtils.verificaTamanhoDaMaiorInput(input1, input2);
-        Log.i("CHECK1", ""+ tamanhoStringMaior);
         input1 = StringUtils.aplicaTamanho(input1, tamanhoStringMaior);
         input2 = StringUtils.aplicaTamanho(input2, tamanhoStringMaior);
-        Log.i("CHECK", ""+ input1);
-        Log.i("CHECK", ""+ input2);
 
         // Verifica qual radiobutton está selecionado e executa o calculo
         if (radio == R.id.rbOr) resultado.setText(CalculadoraUtils.or(input1,input2));
