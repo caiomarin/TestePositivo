@@ -11,36 +11,31 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
-
-    @Test
-    public void verificaTamanhoQuandoInput1Maior(){
+    public void verificaTamanhoDaStringQuandoInput1ForMaior(){
         int tamanho = StringUtils.verificaTamanhoDaMaiorInput("123456789", "123");
         assertEquals(9,tamanho);
     }
 
     @Test
-    public void verificaTamanhoQuandoInput2Maior(){
+    public void verificaTamanhoDaStringQuandoInput2ForMaior(){
         int tamanho = StringUtils.verificaTamanhoDaMaiorInput("1234", "1234567");
         assertEquals(7,tamanho);
     }
 
     @Test
-    public void verificarValorOr(){
+    public void verificarValorFuncaoOr(){
         String resultado = CalculadoraUtils.or("FF","FA");
         assertEquals("FF",resultado);
     }
 
     @Test
-    public void verificarValorXor(){
+    public void verificarValorFuncaoXor(){
         String resultado = CalculadoraUtils.xor("FF","FA");
         assertEquals("05",resultado);
     }
 
     @Test
-    public void verificarValorXorBytes(){
+    public void verificarValorFuncaoXorBytes(){
         byte[] input1 = CalculadoraUtils.hexStringToByteArray("FF");
         byte[] input2 = CalculadoraUtils.hexStringToByteArray("FA");
         String resultado = CalculadoraUtils.xor(input1, input2);
