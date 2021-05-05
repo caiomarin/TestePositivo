@@ -16,13 +16,13 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void verificaTamanhoInput1Maior(){
+    public void verificaTamanhoQuandoInput1Maior(){
         int tamanho = StringUtils.verificaTamanhoDaMaiorInput("123456789", "123");
         assertEquals(9,tamanho);
     }
 
     @Test
-    public void verificaTamanhoInput2Maior(){
+    public void verificaTamanhoQuandoInput2Maior(){
         int tamanho = StringUtils.verificaTamanhoDaMaiorInput("1234", "1234567");
         assertEquals(7,tamanho);
     }
@@ -48,7 +48,7 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void aplicaTamanhoString(){
+    public void validaQuantidadeDe0naString(){
         // Testando a inserção de 3x o 0 na esquerda da String
         assertEquals("000123456789", StringUtils.aplicaTamanho("123456789", 12));
     }
